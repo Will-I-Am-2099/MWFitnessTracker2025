@@ -32,7 +32,7 @@ if uploaded_file:
     proof_filename = os.path.join(UPLOAD_DIR, f"{datetime.now().strftime('%Y%m%d%H%M%S')}.jpg")
     # Save the compressed image
     image.save(proof_filename, "JPEG", quality = 70)
-    st.success("Image uploaded and compressed successfully!"
+    st.success("Image uploaded and compressed successfully!")
                
 
 # Load or create leaderboard data
