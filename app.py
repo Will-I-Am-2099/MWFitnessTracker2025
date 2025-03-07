@@ -25,7 +25,7 @@ uploaded_file = st.file_uploader("Upload step count screenshot (optional)", type
 
 proof_filename = None #Deafault: No proof uploaded
 
-if uploaded_file
+if uploaded_file:
     #Open the uploaded image
     image = Image.open(uploaded_file)
     #Compress the Image(reduce quality)
