@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+from PIL import Image
 import os
 from datetime import datetime
 
@@ -18,6 +19,21 @@ st.markdown(
 # Ensure upload directory exists
 UPLOAD_DIR = "uploads"
 os.makedirs(UPLOAD_DIR, exist_ok=True)
+
+#file uploader for proof of step count
+uploaded_file = st.file_uploader("Upload step count screenshot (optional)", type=["jpg", "png", "jpeg"])
+
+proof_filename = None #Deafault: No proof uploaded
+
+if uploaded_file
+    #Open the uploaded image
+    image = Image.open(uploaded_file)
+    #Compress the Image(reduce quality)
+    proof_filename = os.path.join(UPLOAD_DIR, f"{datetime.now().strftime('%Y%m%d%H%M%S')}.jpg")
+    # Save the compressed image
+    image.save(proof_filename, "JPEG", quality = 70)
+    st.success("Image uploaded and compressed successfully!"
+               
 
 # Load or create leaderboard data
 DATA_FILE = "leaderboard.csv"
